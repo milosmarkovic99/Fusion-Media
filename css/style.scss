@@ -1,0 +1,1091 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+$resp1: 992px;
+$resp2: 768px;
+$resp3: 576px;
+$resp4: 480px;
+$resp5: 360px;
+
+
+@mixin resp1 {
+    @media (max-width: #{$resp1}){
+        @content;
+    }
+}
+
+@mixin resp2 {
+    @media (max-width: #{$resp2}){
+        @content;
+    }
+}
+
+
+@mixin resp3 {
+    @media (max-width: #{$resp3}){
+        @content;
+    }
+}
+
+@mixin resp4 {
+    @media (max-width: #{$resp4}){
+        @content;
+    }
+}
+
+@mixin resp5 {
+    @media (max-width: #{$resp5}){
+        @content;
+    }
+}
+
+
+p{
+    margin-bottom: 0px;
+}
+
+
+.idiGore{
+    position: fixed;
+    z-index: 999;
+    bottom: 3%;
+    right: 2%;
+    text-decoration: none;
+
+    i{
+        color: rgb(78, 78, 78);
+        font-size: 2em;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: monospace;
+
+    .fusionNavigacija{
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        top:0px;
+        z-index: 998;
+        padding: 1% 0%;
+        transition: 0.7s;
+
+        @include resp1{
+            display: none;
+        }
+
+        .logo{
+            width: 30%;
+
+            img{
+                width: 30%;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .mojMeni{
+            width: 60%;
+
+            ul{
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0px;
+
+                li{
+                    position: relative;
+
+                    &:hover ul{
+                        display: block;
+                    }
+
+                    a{
+                        text-decoration: none;
+                        color: whitesmoke;
+                        font-size: 1.4em;
+                        transition: 0.7s;
+                        font-weight: bold;
+
+                        &:hover{
+                            color: rgb(235, 235, 46);
+                        }
+                    }
+
+                    ul{
+                        background: black;
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width: 120px;
+                        display: none;
+
+                        li{
+                            margin: 15% 0%;
+
+                            a{
+                                text-decoration: none;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bojaNavigacije{
+        background-color: lighten(black, 15%);
+    }
+
+
+    .burgerMeni{
+        width: 300px;
+        background-color: black;
+        position: fixed;
+        z-index: 999;
+        top:0px;
+        bottom:0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-400px);
+        transition: 0.7s;
+
+        p{
+            color: #f0f024;
+            font-size: 2em;
+        }
+
+        .mojMeniSide{
+            
+            ul{
+                list-style-type: none;
+
+                li{
+                    margin: 15% 0%;
+
+                    ul{
+                        background-color: lighten(black,15%);
+                    }
+
+                    a{
+                        text-decoration: none;
+                        color: whitesmoke;
+                        transition: 0.7s;
+                        font-size: 1.4em;
+
+                        &:hover{
+                            color: #e2e21f;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .levoDesno{
+        transform: translateX(0px);
+    }
+
+    .burger{
+        position: fixed;
+        z-index: 999;
+        top: 4%;
+        left: 4%;
+        text-decoration: none;
+        display: none;
+
+        @include resp1{
+            display: block;
+        }
+
+            i{
+                color: rgb(211, 211, 45);
+                font-size: 2em;
+            }
+        
+    }
+
+    .stoVH{
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .zatamniStoVH{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1{
+                color: rgb(232, 235, 60);
+                font-size: 4em;
+                padding-bottom: 1%;
+
+                @include resp3{
+                    font-size: 3.4em;
+                }
+
+                @include resp5{
+                    font-size: 2.8em;
+                }
+            }
+
+            h2{
+                color: whitesmoke;
+
+                @include resp3{
+                    font-size: 2.4em;
+                }
+
+                @include resp5{
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    .slickPlugin{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+            color: #000;
+            font-weight: bold;
+            font-size: 3.4em;
+            padding-top: 8%;
+
+            @include resp4{
+                text-align: center;
+                font-size: 2.8em;
+            }
+
+            @include resp5{
+                font-size: 2em;
+                padding-top: 15%;
+            }
+            
+        }
+
+        .slickDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 12% 0%;
+
+            .proizvod{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5% 0%;
+
+                .slikaProizvodaSlick{
+                    width: 70%;
+                    margin-bottom: 13%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img{
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .naruciMe{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    h3{
+                        font-size: 2.5em;
+                        font-weight: bold;
+                        text-align: center;
+
+                        @include resp1{
+                            font-size: 2.1em;
+                        }
+
+                        @include resp2{
+                            font-size: 1.8em;
+                        }
+
+                        @include resp4{
+                            font-size: 1.3em;
+                        }
+                    }
+
+                    p{
+                        font-size: 1.2em;
+                        text-align: center;
+
+                        @include resp3{
+                            padding: 0% 3%;
+                            font-weight: bold;
+                        }
+
+                        @include resp4{
+                            font-size: 1em;
+                            padding: 0% 5%;
+                        }
+                    }
+
+                    .zut{
+                        color: tomato;
+                        font-size: 1.5em;
+                        padding: 3% 0%;
+
+                        @include resp4{
+                            font-size: 1.1em;
+                        }
+                    }
+
+                    a{
+                        text-decoration: none;
+                        display: block;
+                        width: 50%;
+                        background: #000;
+                        text-align: center;
+                        padding: 3% 0%;
+                        color: whitesmoke;
+                        font-weight: bold;
+                        font-size: 1.2em;
+                        transition: 0.6s;
+
+                        @include resp4{
+                            width: 80%;
+                        }
+
+                        &:hover{
+                            color: yellow;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-prev,
+    .slick-next {
+    font-size: 0;
+    position: absolute;
+    color: #000;
+    border: 0;
+    background: none;
+    z-index: 1;
+    transition: 1s;
+}
+
+.slick-prev {
+    left: -3%;
+}
+
+.slick-prev:after {
+	  content: "<";
+    font: 40px monospace;
+    transition: .7s;
+    height: auto;
+}
+
+.slick-next {
+    right: -3%;
+}
+
+.slick-next:after {
+	   content: ">";
+     font: 40px monospace;
+     transition: .7s;
+}
+
+.slick-prev:hover:after,
+.slick-next:hover:after {
+    color: rgb(238, 238, 31);
+}
+
+    .blokoviTehnike{
+        background-color: #eef118;
+        padding: 5% 0%;
+        margin-bottom: 10%;
+
+        .blokTehnike{
+
+            .tehnika1{
+
+                .tehnika2{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include resp1{
+                        flex-direction: row;
+                        margin-bottom: 5%;
+                    }
+
+                    a{
+                        margin: 3%;
+                        color: #000;
+                        font-weight: bold;
+                        font-size: 1.5em;
+                        text-decoration: none;
+                        transition: 0.6s;
+
+                        &:hover{
+                            color: lighten(black, 55%);
+                        }
+
+                        @include resp5{
+                            font-size: 1.3em;
+                        }
+                    }
+                }
+
+                .tehnika3{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h3{
+                        font-size: 2.4em;
+                        text-align: center;
+                    }
+
+                    p{
+                        padding: 5% 0%;
+                        font-size: 1.2em;
+
+                        @include resp1{
+                            font-size: 1.4em;
+                        }
+                    }
+
+                    a{
+                        display: block;
+                        width: 25%;
+                        text-align: center;
+                        padding: 2% 0%;
+                        background: #000;
+                        color: whitesmoke;
+                        text-decoration: none;
+                        transition: 0.7s;
+
+                        @include resp4{
+                            width: 45%;
+                            margin-top: 5%;
+                        }
+
+                        @include resp5{
+                            width: 55%;
+                            padding: 5% 0%;
+                        }
+
+                        &:hover{
+                            background: whitesmoke;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .usluge{
+        margin: 10% 0% 15% 0%;
+
+        .fusionUsluge{
+
+            .usluge1{
+
+                .uslugeKolonaKutija{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: center;
+                    padding: 3% 0%;
+                    transition: 0.6s;
+
+                        @include resp1{
+                            margin: 4% 0%;
+                        }
+
+                    &:hover{
+                        background-color: whitesmoke;
+                    }
+
+                    &:hover i{
+                        color: rgb(207, 207, 48);
+                    }
+
+                    i{
+                        font-size: 3em;
+                        transition: 0.6s;
+                    }
+
+                    h3{
+                        color: rgb(39, 39, 39);
+                        padding: 10% 0%;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+
+                    p{
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+
+    .popust{
+        background: #141414;
+        padding: 10% 0%;
+
+        .popust1{
+
+            .popustRed{
+
+                .kolonaPopust{
+
+                    @include resp1{
+                        margin-bottom: 7%;
+                    }
+                    
+                    h2{
+                        color: yellow;
+                        font-weight: bold;
+                        font-size: 3em;
+
+                        @include resp1{
+                            text-align: center;
+                        }
+                    }
+
+                    p{
+                        color: white;
+                        font-size: 1.3em;
+                        padding-top: 5%;
+                        text-align: justify;
+
+                        @include resp3{
+                            line-height: 32px;
+                        }
+                    }
+                }
+
+                .kolonaPopust1{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+
+                    .popustBlok{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        p{
+                            color: yellow;
+                            padding: 1% 0%;
+                            text-align: center;
+                        }
+
+                        #popust{
+                            font-size: 1.8em;
+                        }
+
+                        #kodPopusta{
+                            font-size: 1.5em;
+                        }
+
+                        .otkrijPopust{
+                            width: 50%;
+                            background: #000;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transform: translateY(0px);
+                            transition: 1s;
+                            text-decoration: none;
+
+                        .prekrijPopust{
+                            
+                            p{
+                                color: whitesmoke;
+                                font-size: 1.4em;
+                                font-weight: bold;
+                            }
+                        }
+
+                        
+                    }
+
+                    .odnesiPopust{
+                        transform: translateY(-300px);
+                    }
+                }
+                
+                }
+            }
+        }
+    }
+
+    .futer{
+        background-color: #000;
+
+        .futerKontejner{
+
+            .redFutera{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 4% 0%;
+
+                .kolona1Reda1{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img{
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: 0px auto;
+
+                        @include resp1{
+                            width: 80%;
+                        }
+
+                        @include resp4{
+                            width: 55%;
+                        }
+                    }
+                }
+
+                .kolona2Reda1{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include resp1{
+                        margin-top: 5%;
+                    }
+
+                    p{
+                        color: yellow;
+                        font-size: 2em;
+                    }
+
+                    .socijalne{
+                        width: 40%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 4% 0%;
+
+                        @include resp4{
+                            width: 60%;
+                        }
+
+
+                        a{
+                            text-decoration: none;
+
+                            i{
+                                color: white;
+                                transition: 0.6s;
+                                font-size: 2em;
+
+                                &:hover{
+                                    color: yellow;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .redNekihLinkova{
+                padding: 3% 0%;
+
+                .zadnjiRed{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                    
+                    p{
+                        font-size: 1.8em;
+                        color: white;
+                        padding-bottom: 5%;
+                    }
+                    
+                    .zutiLinkovi{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        @include resp2{
+                            flex-direction: column;
+                        }
+
+                        a{
+                            text-decoration: none;
+                            color: white;
+                            font-size: 1.3em;
+
+                            @include resp2{
+                                margin: 2% 0%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .kontaktirajteNas{
+        background: lighten(black,15%);
+        margin-bottom: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5% 0%;
+
+        h3{
+            color: rgb(233, 220, 47);
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        form{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4%;
+            border: none;
+
+            @include resp2{
+                margin-top: 10%;
+            }
+
+            @include resp4{
+                width: 80%;
+            }
+
+            p{
+                padding: 1.5% 0%;
+                color: #e9e949;
+                font-size: 1.13em;
+                font-weight: bold;
+                visibility: hidden;
+                text-align: center;
+
+                @include resp1{
+                    padding: 3% 0%;
+                }
+            }
+
+            #nijeGreska{
+                color: #4dc94d;
+            }
+
+            .popuniSirinu{
+                width: 50%;
+                padding: 1%;
+                border: 3px solid white;
+                background-color: transparent;
+                color: white;
+
+                @include resp1{
+                    width: 70%;
+                }
+
+                @include resp2{
+                    width: 80%;
+                }
+
+                @include resp4{
+                    width: 100%;
+                }
+
+                &::placeholder{
+                    color: white;
+                }
+            }
+
+            #biraj{
+                width: 20%;
+                padding: 1% 0%;
+
+                @include resp1{
+                    width: 30%;
+                }
+
+                @include resp2{
+                    width: 50%;
+                }
+            }
+
+            #posaljiPodatke{
+                width: 25%;
+                padding: 1.3% 0%;
+                border: none;
+                background: white;
+                color: black; 
+                font-weight: bold;
+                font-size: 1.2em;
+                transition: 0.7s;
+
+                @include resp2{
+                    width: 45%;
+                    padding: 1.6% 0%;
+                }
+
+                &:hover{
+                    background: black;
+                    color: white;
+                }
+            }
+        }
+    }
+
+
+    .blokoviSablon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20%;
+
+        h1{
+            font-size: 4em;
+            color: black;
+            font-weight: bold;
+
+            @include resp4{
+                font-size: 2.5em;
+            }
+        }
+
+        .blokSablon{
+            margin: 5% 0%;
+
+            .redRacunaraBlokovi{
+                margin: 5% 0%;
+
+                .proizvod{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.5% 0%;
+                    transition: 0.6s;
+
+                    @include resp1{
+                        margin: 10% 0%;
+                    }
+
+                    &:hover{
+                        background-color: lighten(black,75%);
+                    }
+    
+                    .slikaProizvodaSlick{
+                        width: 90%;
+                        margin-bottom: 13%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        img{
+                            width: 80%;
+                            max-width: 100%;
+                            height: auto;
+
+                            @include resp1{
+                                width: 50%;
+                            }
+                        }
+                    }
+    
+                    .naruciMe{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+    
+                        h3{
+                            font-size: 2.5em;
+                            font-weight: bold;
+
+                            @include resp5{
+                                font-size: 2.2em;
+                            }
+                        }
+    
+                        p{
+                            font-size: 1.2em;
+                            text-align: center;
+                        }
+    
+                        .zut{
+                            color: tomato;
+                            font-size: 1.5em;
+                            padding: 3% 0%;
+                        }
+    
+                        a{
+                            text-decoration: none;
+                            display: block;
+                            width: 50%;
+                            background: #000;
+                            text-align: center;
+                            padding: 3% 0%;
+                            color: whitesmoke;
+                            font-weight: bold;
+                            font-size: 1.2em;
+                            transition: 0.6s;
+    
+                            &:hover{
+                                color: yellow;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .opisNas{
+        margin-top: 25%;
+
+        @include resp1{
+            margin-top: 5%;
+        }
+
+        @include resp4{
+            margin-top: 15%;
+        }
+
+        .opisNasKratko{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h1{
+                padding-bottom: 3%;
+            }
+
+            p{
+                font-size: 1.2em;
+                text-align: justify;
+                line-height: 32px;
+
+                @include resp4{
+                    font-size: 1em;
+                    font-weight: bold;
+                }
+            }
+        }
+        
+    }
+
+    .autor{
+        margin: 8% 0%;
+
+        .autor1{
+
+            .autor11{
+
+                .opisAutora{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    h2{
+                        padding-bottom: 5%;
+                        font-size: 3em;
+                    }
+
+                    p{
+                        font-size: 1.2em;
+
+                        @include resp4{
+                            line-height: 30px;
+                        }
+
+                        a{
+                            color: rgb(218, 188, 92);
+                        }
+                    }
+                }
+
+                .slikaAutora{
+                    width: 30%;
+
+                    @include resp1{
+                        width: 50%;
+                        margin: 10% auto;
+                    }
+
+                    @include resp4{
+                        width: 75%;
+                    }
+
+                    img{
+                        display: block;
+                        margin: 0px auto;
+                        width: 80%;
+                        max-width: 100%;
+                        height: auto;
+                        border: 4px solid black;
+                    }
+                }
+            }
+        }
+    }
+
+}
